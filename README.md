@@ -1,5 +1,28 @@
 # Apparel_Extraction
 
+`Unable to find "that" red top, even after scrolling for hours? We've got you covered. Image search is here :)`
+
+In Apparel_Extraction, Semantic Segmentation is performed on image to obtain masked cloth region which is later categorised corresponding to different
+class indices or used for IMAGE SEARCH !
+
+### Dataset:
+
+[Original Dataset Link](https://www.kaggle.com/c/imaterialist-fashion-2019-FGVC6/data)
+We have performed two main modifications to
+the dataset:
+
+(a) 13,200 images are chosen from a total 50,000 images.
+
+(b) Original dataset contains 46 clothing categories which are narrowed down to 4 classes viz., Background, UpperBody, WholeBody, LowerBody. Code for same is included in dataset_creation folder
+
+### Web API
+
+Using streamlit web application is developed and deployed to heroku. Everytime application is accessed, api request is sent to AWS EC2 instance where Trained Model is located. Image uploded by user in web app is sent to EC2 instance later processing is performed on image to output segmentation mask. This mask is returned as response to api request and is displayed in web application.
+
+<img src="Images/api2.png" /> 
+
+(Linux t2.medium instance was used for experimentation which costs $0.0552 on hourly basis.)
+
 ### File Structure
 
 - Training/Training.ipynb 

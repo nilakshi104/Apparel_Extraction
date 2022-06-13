@@ -1,0 +1,1 @@
+aws_ec2/models/*.pth filter=lfs diff=lfs merge=lfs -text

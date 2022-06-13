@@ -5,11 +5,11 @@
 In Apparel_Extraction, Semantic Segmentation is performed on image to obtain masked cloth region which is later categorised corresponding to different
 class indices or used for IMAGE SEARCH !
 
-### Dataset:
+### Dataset
 
 [Original Dataset Link](https://www.kaggle.com/c/imaterialist-fashion-2019-FGVC6/data)
-We have performed two main modifications to
-the dataset:
+
+performed two main modifications to the dataset:
 
 (a) 13,200 images are chosen from a total 50,000 images.
 
@@ -19,7 +19,9 @@ the dataset:
 
 Using streamlit web application is developed and deployed to heroku. Everytime application is accessed, api request is sent to AWS EC2 instance where Trained Model is located. Image uploded by user in web app is sent to EC2 instance later processing is performed on image to output segmentation mask. This mask is returned as response to api request and is displayed in web application.
 
-<img src="Images/api2.png" /> 
+<p align="center">
+<img src="Images/api2.png" width=300/> 
+</p>
 
 (Linux t2.medium instance was used for experimentation which costs $0.0552 on hourly basis.)
 
@@ -47,6 +49,13 @@ selected in sidebar of web application is “Try with inbuilt test image”)
  - Decode_mask and ip_encode
 
 - aws_ec2/app.py (Python file containing testing code and routes code (written using flask) stored on AWS EC2 instance. This is accessed by web application when api request is sent)
+
+### Results
+
+Right side contains original images and left side has segmentation mask of corresponding images. With these results model achieved accuracy of 93.34%. We have used pixelwise accuracy as a metric for evaluating performance of model on test dataset.
+<p align="center">
+<img src="Images/img2.png" width=450 height=600/> 
+</p>
 
 
 

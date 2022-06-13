@@ -17,7 +17,7 @@ performed two main modifications to the dataset:
 
 ### Web API
 
-Using streamlit web application is developed and deployed to heroku. Everytime application is accessed, api request is sent to AWS EC2 instance where Trained Model is located. Image uploded by user in web app is sent to EC2 instance later processing is performed on image to output segmentation mask. This mask is returned as response to api request and is displayed in web application.
+Using streamlit web application is developed and deployed using heroku platform. Everytime application is accessed, api request is sent to AWS EC2 instance where Trained Model is stored. Image uploded by user in web app is sent to EC2 instance, later processing is performed on image to output segmentation mask. This mask is returned as response of api request and is displayed in web application.
 
 <p align="center">
 <img src="Images/api2.png" width=300/> 
@@ -37,7 +37,7 @@ Using streamlit web application is developed and deployed to heroku. Everytime a
 
 - web_application
   - app
-    - app.py (Code is written using streamlit framework for building GUI of web application)
+    - app.py
     - call_api.py 
  - images (Contains images deployed on heroku. These images are used as input if option
 selected in sidebar of web application is “Try with inbuilt test image”)
@@ -52,7 +52,8 @@ selected in sidebar of web application is “Try with inbuilt test image”)
 
 ### Results
 
-Right side contains original images and left side has segmentation mask of corresponding images. With these results model achieved accuracy of 93.34%. We have used pixelwise accuracy as a metric for evaluating performance of model on test dataset.
+Right side contains original images and left side has segmentation mask of corresponding images. With these results model achieved accuracy of 93.34%. We have used pixelwise accuracy as a metric for evaluating performance of model on test dataset. Using detected class ids, category of class is identified.
+
 <p align="center">
 <img src="Images/img2.png" width=450 height=600/> 
 </p>
